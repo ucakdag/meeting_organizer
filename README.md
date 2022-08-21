@@ -1,2 +1,2 @@
 # meeting_organizer
-An application where users can create, edit and delete their meetings.
+An application where users can create, edit and delete their meetings. Simple html is used for the front-end side. HTML codes are located in the "templates" folder. You can view, edit and delete meeting recordings via the "showmeets" url. You can do your update process with the help of a pop-up window without leaving the "showmeets" page. To add a meeting, you can create a meeting via the "/create" url after clicking the "create" button on the "showmeets" page. With the Delete button, you can easily delete your meeting without leaving the page.
