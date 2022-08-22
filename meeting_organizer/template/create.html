@@ -1,0 +1,37 @@
+<body background="https://pbs.twimg.com/profile_images/767393435041030146/JAFFf38k_400x400.jpg">
+<form action="/showmeets" method="post">
+  <div class="container">
+    <div align="center">
+	<h1>Create Meeting </h1>
+    <p>Please fill in this form to create a meeting.</p>
+
+    <label for="subject"><b>Meeting Subject</b></label>
+	<br><br>
+
+    <input type="text" placeholder="Enter Meeting Subject" name="subject" id="subject" required>
+	<br><br>
+    <label for="date"><b>Date</b></label>
+    <br><br>
+	<input type="date" placeholder="Enter Date MM/DD/YYYY" name="date" id="date" required>
+	<br><br>
+    <label for="Starting Time"><b>Starting Time</b></label>
+    <br><br>
+	<input type="time" placeholder="Enter Start Time" name="starttime" id="starttime" required>
+	
+	<div class="container"><br>
+	<label for="Ending Time"><b>Ending Time</b></label>
+    <br><br>
+	<input type="time" placeholder="Enter Ending Time" name="endtime" id="endtime" required>
+	<br><br>
+	<label for="Members"><b>Members</b></label>
+    <br><br>
+	<input type="textarea" placeholder="Enter Members" name="members" id="members" required>
+    <br><br>
+    <button type="submit" class="registerbtn">Create Meeting</button>
+	
+	</div>
+	</div>
+    
+  </div>
+</form>
+</body>

@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title color= "red">Meeting Lists</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <div align="center">
+
+    <h1>Meeting List</h1>
+	{{ hata }} <br>
+	
+
+<form action="/update" method="post">
+<table border="1">
+    <body background="https://pbs.twimg.com/profile_images/767393435041030146/JAFFf38k_400x400.jpg">
+        <tr>
+			<td><b>Meeting ID<b></td>
+            <td><b>Meeting Subject<b></td>
+			<td><b>Meeting Date<b></td>
+			<td><b>Meeting Starting Time<b></td>
+			<td><b>Meeting Ending Time<b></td>
+            <td><b>Meeting Members<b><br />
+            </td>
+        </tr>
+		{% for data in datas %}
+        <tr>
+		
+		
+			<td>{{data.idmeets}}</td>
+            <td>{{data.meetingsubject}}</td>
+            <td>{{data.meetingdate}}</td>
+			<td>{{data.meetingstarttime}}</td>
+			<td>{{data.meetingendtime}}</td>
+			<td>{{data.members}}</td>
+			<td>
+			<div id="pencerekodu"><label for="pencere" class="dugme">
+Edit
+</label><input type="checkbox" class="Pencereac" id="pencere" name="pencere"></input><label class="pencere">
+<form action="/showmeets" method="post">
+  <div class="container">
+    <div align="center">
+	<h1>Edit Meeting</h1>
+    <p>Please fill in this form to edit a meeting.</p>
+    <label for="subject"><b>Meeting ID</b></label>
+	<br>
+
+    <input type="text" value={{data.idmeets}} name="id" id="id" readonly><br>
+
+    <label for="subject"><b>Meeting Subject</b></label>
+	<br><br>
+
+    <input type="text" placeholder="Enter Meeting Subject" name="subject" id="subject" required>
+	<br><br>
+    <label for="date"><b>Date</b></label>
+    <br><br>
+	<input type="date" placeholder="Enter Date MM/DD/YYYY" name="date" id="date" required>
+	<br><br>
+    <label for="Starting Time"><b>Starting Time</b></label>
+    <br><br><br>
+	<input type="time" placeholder="Enter Start Time" name="starttime" id="starttime" required>
+	<br><br>
+	<label for="Ending Time"><b>Ending Time</b></label>
+    <br><br>
+	<input type="time" placeholder="Enter Ending Time" name="endtime" id="endtime" required>
+    
+	<label for="Members"><b>Members</b></label>
+    <br><br>
+	<input type="textarea" placeholder="Enter Members" name="members" id="members" required>
+    <br><br>
+    <button type="submit" class="registerbtn">Edit Meeting</button>
+	
+	</div>
+    
+  </div>
+</form>
+<label for="pencere" class="dugme" name="kapat">Kapat</label></label></div>
+<style> .dugme{cursor:pointer;display:inline-block;padding:5px 10px;background:#eee;border:1px solid #d8d8d8;font-family:Helvetica, Arial, sans-serif;font-size:14px;color:#444; -webkit-border-radius: 3px; border-radius: 3px; } [name="kapat"]{position:absolute;bottom:20px;right:20px;} .pencere{ position:fixed;top:-50%;left:-50%; width:380px;height:620px;background:#fff;box-shadow:0 0 6px 2px rgba(0,0,0,0.4); opacity:0; transition:opacity 0.6s ease-out; z-index:-1; padding:10px; -webkit-border-radius: 3px; border-radius: 3px; margin:-300px 0 0 -200px; } .Pencereac{width:1px;height:1px;visibility:hidden;} .Pencereac:checked + .pencere{ top:50%;left:50%; display:block; z-index:9; opacity:1;}</style></td>
+		<td><a href="{{url_for('create')}}">Create</a></td>
+		<td><a href="{{url_for('delete',id=data.idmeets)}}">Delete</a></td>
+	
+
+        </tr>{% endfor %}
+		
+    </body>
+</table></div>
+</body>
+</form>
